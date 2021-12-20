@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,30 @@ namespace r6Launcher.Forms
         public FormSelectSiege()
         {
             InitializeComponent();
+        }
+
+        private void ResetClicked(object sender, EventArgs e)
+        {
+            var settings = new Properties.Settings();
+            settings.Reset();
+            settings.Save();
+            comboBoxSelectSiege.Items.Clear();
+        }
+
+        private void FormLoad(object sender, EventArgs e)
+        {
+            var settings = new Properties.Settings();
+            var arrayopselect = settings.OperationSelect.Split(',').ToArray();
+            comboBoxSelectSiege.Items.AddRange(arrayopselect);
+        }
+
+        private void comboBoxSelectSiege_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSelectSiege.SelectedIndex != -1)
+            {
+                var pub = new Public();
+                pub.SelectedSeason = comboBoxSelectSiege.SelectedItem.ToString();
+            }
         }
     }
 }

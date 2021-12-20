@@ -16,7 +16,7 @@ namespace r6Launcher.Forms
         
 
         
-        public FormAddSiege(int value)
+        public FormAddSiege(/*int value*/)
         {
             InitializeComponent();
             
@@ -31,6 +31,14 @@ namespace r6Launcher.Forms
 
         private void comboBoxAddSiege_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBoxAddSiege.SelectedIndex != -1)
+            {
+                int indx = comboBoxAddSiege.SelectedIndex;
+                Log.WriteLog("Add: " + comboBoxAddSiege.SelectedItem);
+                var settings = new Properties.Settings();
+                settings.OperationSelect += comboBoxAddSiege.SelectedItem.ToString() + ",";
+                settings.Save();
+            }
 
         }
 

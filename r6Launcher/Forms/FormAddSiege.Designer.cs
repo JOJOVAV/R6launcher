@@ -57,7 +57,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 16);
+            this.label1.Size = new System.Drawing.Size(166, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "The name of the Operation";
             // 
@@ -65,6 +65,7 @@
             // 
             this.comboBoxAddSiege.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxAddSiege.BackColor = System.Drawing.Color.Gray;
+            this.comboBoxAddSiege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAddSiege.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAddSiege.ForeColor = System.Drawing.Color.White;
             this.comboBoxAddSiege.FormattingEnabled = true;

@@ -31,6 +31,7 @@
             this.buttonSelectSiege = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxSelectSiege = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSelectSiege
@@ -61,7 +62,7 @@
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 16);
+            this.label1.Size = new System.Drawing.Size(166, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "The name of the Operation";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,6 +71,7 @@
             // 
             this.comboBoxSelectSiege.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxSelectSiege.BackColor = System.Drawing.Color.Gray;
+            this.comboBoxSelectSiege.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSelectSiege.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSelectSiege.ForeColor = System.Drawing.Color.White;
             this.comboBoxSelectSiege.FormattingEnabled = true;
@@ -77,6 +79,27 @@
             this.comboBoxSelectSiege.Name = "comboBoxSelectSiege";
             this.comboBoxSelectSiege.Size = new System.Drawing.Size(275, 24);
             this.comboBoxSelectSiege.TabIndex = 7;
+            this.comboBoxSelectSiege.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectSiege_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(13, 293);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.MinimumSize = new System.Drawing.Size(154, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 64);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ResetClicked);
             // 
             // FormSelectSiege
             // 
@@ -86,6 +109,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(539, 370);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxSelectSiege);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSelectSiege);
@@ -96,6 +120,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select your operation to play";
+            this.Load += new System.EventHandler(this.FormLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +131,6 @@
         private System.Windows.Forms.Button buttonSelectSiege;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxSelectSiege;
+        private System.Windows.Forms.Button button1;
     }
 }
