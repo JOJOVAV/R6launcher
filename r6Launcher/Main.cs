@@ -19,25 +19,11 @@ namespace r6Launcher
         private string STARTEXE;
         private string Path;
         private bool NeedBE_Off;
-        /*Form formAdd = new Form();
-        Form formSelect = new Form();*/
-        /*System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["Form1"];
-        System.Windows.Forms.Form formAdd = System.Windows.Forms.Application.OpenForms["FormAddSiege"];
-        System.Windows.Forms.Form formSelect = System.Windows.Forms.Application.OpenForms["FormSelectSiege"];*/
 
         public Main()
         {
             InitializeComponent();
             customMenu();
-            /*if (formSelect != activeForm)
-            {
-                buttonPlay.Enabled = false;
-            }*/
-            /*else if ()
-            {
-                buttonPlay.Enabled = true;
-            }*/
-
         }
         //hiding the extra menu
         private void customMenu()
@@ -57,15 +43,6 @@ namespace r6Launcher
                 subMenu.Visible = false;
             }
         }
-
-        //the user settings
-        public void getSettings()
-        {
-            
-
-            
-        }
-        
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             showMenu(panelSubMenu);
@@ -131,7 +108,7 @@ namespace r6Launcher
             var pub = new Public();
             if (!string.IsNullOrEmpty(pub.SelectedSeason))
             { 
-
+                //launch method here
             }
         }
         private void Checking()
