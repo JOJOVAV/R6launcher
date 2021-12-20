@@ -97,8 +97,8 @@ namespace r6Launcher
             childForm.Show();
             labelTitle.Text = childForm.Text;
         }
-        //for some reason doesn't work anymore
 
+        
         private void buttonAddSiege_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormAddSiege(), sender);
