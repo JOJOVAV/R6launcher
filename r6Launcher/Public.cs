@@ -8,6 +8,6 @@ namespace r6Launcher
 {
     class Public
     {
-        public string SelectedSeason;
+        public static bool useVulkan = false;
     }
 }

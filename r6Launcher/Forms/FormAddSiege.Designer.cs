@@ -115,7 +115,6 @@
             this.MaximumSize = new System.Drawing.Size(555, 409);
             this.Name = "FormAddSiege";
             this.Text = "Add your Operation";
-            this.Load += new System.EventHandler(this.FormAddSiege_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

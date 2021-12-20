@@ -32,5 +32,8 @@ Y6S4 High Calibre</Value>
     <Setting Name="OperationSelect" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="Currently_Op" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

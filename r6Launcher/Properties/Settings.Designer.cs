@@ -70,5 +70,17 @@ Y6S4 High Calibre")]
                 this["OperationSelect"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Currently_Op {
+            get {
+                return ((string)(this["Currently_Op"]));
+            }
+            set {
+                this["Currently_Op"] = value;
+            }
+        }
     }
 }
