@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/.vs/
 /.vs/R6Launcher/v16
 /.vs/Rainbow Six Launcher/v16
 /r6Launcher/bin/Debug
