@@ -29,6 +29,7 @@ namespace r6Launcher
         {
             showMenu(panelSubMenu);
         }
+        //opens the form add siege
         private void buttonAddSiege_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormAddSiege(), sender);
@@ -41,28 +42,31 @@ namespace r6Launcher
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            //array for closing siege
             Close();
         }
         private void buttonSelectSiege_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormSelectSiege(), sender);
         }
+
+        //start r6
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            Forms.FormEmpty formEmpty = new Forms.FormEmpty();
-            OpenChildForm(formEmpty, sender);
-            formEmpty.lblText("Playing...");
+            //Forms.FormEmpty formEmpty = new Forms.FormEmpty();
+            //OpenChildForm(formEmpty, sender);
+            //formEmpty.lblText("Playing...");
             var settings = new Properties.Settings();
             if (!string.IsNullOrWhiteSpace(settings.Currently_Op))
             {
-                formEmpty.lblText(settings.Currently_Op + " is starting soon..");
-                GetPaths(settings.Currently_Op);
+                //formEmpty.lblText(settings.Currently_Op + " is starting soon..");
+                //GetPaths(settings.Currently_Op);
                 if (isCancelled == false)
                 {
                     Checking();
                     if (!string.IsNullOrEmpty(STARTEXE))
                     {
-                        formEmpty.lblText("Starting " + STARTEXE + " !\nWith BattlEye off? " + NeedBE_Off);
+                        //formEmpty.lblText("Starting " + STARTEXE + " !\nWith BattlEye off? " + NeedBE_Off);
                         //  This start R6 Exe, no need Batch /.bat
                         Process process = new Process();
                         process.StartInfo.FileName = Path + "\\" + STARTEXE;
@@ -117,6 +121,7 @@ namespace r6Launcher
                 }
             }
         }
+
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
@@ -167,7 +172,7 @@ namespace r6Launcher
                 }
             }
         }
-        private void GetPaths(string season)
+        /*private void GetPaths(string season)
         {
             // IF no Select download Path
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
@@ -186,7 +191,7 @@ namespace r6Launcher
                 isCancelled = true;
             }
 
-        }
+        }*/
         #endregion
 #region EndFrom
     }
