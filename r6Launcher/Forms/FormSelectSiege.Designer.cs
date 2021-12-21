@@ -45,7 +45,7 @@
             this.buttonSelectSiege.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSelectSiege.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelectSiege.ForeColor = System.Drawing.Color.White;
-            this.buttonSelectSiege.Location = new System.Drawing.Point(161, 195);
+            this.buttonSelectSiege.Location = new System.Drawing.Point(169, 293);
             this.buttonSelectSiege.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSelectSiege.MinimumSize = new System.Drawing.Size(154, 64);
             this.buttonSelectSiege.Name = "buttonSelectSiege";
@@ -63,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 16);
+            this.label1.Size = new System.Drawing.Size(165, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "The name of the Operation";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,9 +85,10 @@
             // useVulkanCheckBox
             // 
             this.useVulkanCheckBox.AutoSize = true;
+            this.useVulkanCheckBox.ForeColor = System.Drawing.Color.White;
             this.useVulkanCheckBox.Location = new System.Drawing.Point(367, 338);
             this.useVulkanCheckBox.Name = "useVulkanCheckBox";
-            this.useVulkanCheckBox.Size = new System.Drawing.Size(160, 20);
+            this.useVulkanCheckBox.Size = new System.Drawing.Size(159, 20);
             this.useVulkanCheckBox.TabIndex = 8;
             this.useVulkanCheckBox.Text = "Use Vulkan If possible";
             this.useVulkanCheckBox.UseVisualStyleBackColor = true;
@@ -103,11 +104,11 @@
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetButton.ForeColor = System.Drawing.Color.White;
-            this.resetButton.Location = new System.Drawing.Point(15, 317);
+            this.resetButton.Location = new System.Drawing.Point(15, 293);
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.MinimumSize = new System.Drawing.Size(120, 40);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(120, 40);
+            this.resetButton.Size = new System.Drawing.Size(120, 64);
             this.resetButton.TabIndex = 9;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
