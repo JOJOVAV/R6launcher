@@ -9,5 +9,6 @@ namespace r6Launcher
     class Public
     {
         public static bool useVulkan = false;
+        public static bool isCancelled = true;
     }
 }

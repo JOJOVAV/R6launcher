@@ -224,6 +224,7 @@ namespace r6Launcher
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelSubMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);

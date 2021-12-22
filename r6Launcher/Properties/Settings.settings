@@ -5,7 +5,7 @@
     <Setting Name="OperationAdd" Type="System.String" Scope="User">
       <Value Profile="(Default)">Y1S0 Vanilla
 Y1S1 Black Ice
-Y1S2 Dust LIne
+Y1S2 Dust Line
 Y1S3 Skull Rain
 Y1S4 Red Crow
 Y2S1 Velvet Shell
@@ -33,6 +33,12 @@ Y6S4 High Calibre</Value>
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Currently_Op" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Saved_Path" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SavedPathOps" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 using System.Diagnostics;
 #endregion
 #region StartFrom
@@ -15,13 +16,17 @@ namespace r6Launcher
         private Form activeForm;
         private Button currentButton;
         private string STARTEXE;
-        private string Path;
         private bool NeedBE_Off;
-        private bool isCancelled;
         public Main()
         {
             InitializeComponent();
             customMenu();
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
+            var settings = new Properties.Settings();
+            settings.Currently_Op = null;
+            settings.Save();
         }
         #endregion
         #region Clicked Events
@@ -49,35 +54,33 @@ namespace r6Launcher
         {
             OpenChildForm(new Forms.FormSelectSiege(), sender);
         }
-
         //start r6
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            //Forms.FormEmpty formEmpty = new Forms.FormEmpty();
-            //OpenChildForm(formEmpty, sender);
-            //formEmpty.lblText("Playing...");
             var settings = new Properties.Settings();
             if (!string.IsNullOrWhiteSpace(settings.Currently_Op))
             {
-                //formEmpty.lblText(settings.Currently_Op + " is starting soon..");
-                //GetPaths(settings.Currently_Op);
-                if (isCancelled == false)
+                if (Public.isCancelled == false)
                 {
-                    Checking();
-                    if (!string.IsNullOrEmpty(STARTEXE))
+                    if (!string.IsNullOrWhiteSpace(settings.Saved_Path))
                     {
-                        //formEmpty.lblText("Starting " + STARTEXE + " !\nWith BattlEye off? " + NeedBE_Off);
-                        //  This start R6 Exe, no need Batch /.bat
-                        Process process = new Process();
-                        process.StartInfo.FileName = Path + "\\" + STARTEXE;
-                        if (NeedBE_Off == true) { process.StartInfo.Arguments = " /belaunch"; }
-                        process.Start();
-                        Log.SpecificLog(STARTEXE + " Belaunch? " + NeedBE_Off + " Started!", "StartGame");
-                        process.Exited += delegate
+                        string _Path = settings.Saved_Path;
+                        StartR6(_Path);
+                    }     
+                }
+                else
+                {
+                    string[] splitted = settings.SavedPathOps.Split('|');
+                    foreach (string file in splitted)
+                    {
+                        string[] splittedfile = file.Split('*');
+                        string Path = splittedfile.First();
+                        string season = splittedfile.Last();
+                        if (season == settings.Currently_Op)
                         {
-                            Log.WriteLog("R6 Got Exited");
-                            activeForm.Close();
-                        };
+                            //Log.WriteLog(Path + " " + season);
+                            StartR6(Path);
+                        }
                     }
                 }
             }
@@ -139,7 +142,7 @@ namespace r6Launcher
         }
         #endregion
         #region Other Voids
-        private void Checking()
+        private void Checking(string Path)
         {
             NeedBE_Off = true;
             if (File.Exists(Path + "\\RainbowSixGame.exe")) //Checking old RainbowSixGame.exe
@@ -172,28 +175,29 @@ namespace r6Launcher
                 }
             }
         }
-        /*private void GetPaths(string season)
+        private void StartR6(string Path)
         {
-            // IF no Select download Path
-            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
-            folderDlg.Description = "Select your " + season + " Siege Folder";
-            DialogResult result = folderDlg.ShowDialog();
-            if (result == DialogResult.OK & result != DialogResult.Cancel)
+            Checking(Path);
+            if (!string.IsNullOrEmpty(STARTEXE))
             {
-                // Set Starting Path
-                Path = folderDlg.SelectedPath;
-                Log.WriteLog(Path);
-                isCancelled = false;
+                if (File.Exists(Path + "\\" + STARTEXE))
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = Path + "\\" + STARTEXE;
+                    if (NeedBE_Off == true) { process.StartInfo.Arguments = " /belaunch"; }
+                    process.EnableRaisingEvents = true;
+                    process.Start();
+                    Log.SpecificLog(STARTEXE + " Belaunch? " + NeedBE_Off + " Started!", "StartGame");
+                    process.Exited += delegate
+                    {
+                        Log.WriteLog("R6 Got Exited");
+                        //activeForm.Close();
+                    };
+                }
             }
-            else
-            {
-                Log.WriteLog("Folder Selection cancelled");
-                isCancelled = true;
-            }
-
-        }*/
+        }
         #endregion
-#region EndFrom
+        #region EndFrom
     }
 }
 #endregion

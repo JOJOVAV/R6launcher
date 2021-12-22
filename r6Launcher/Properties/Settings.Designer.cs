@@ -27,7 +27,7 @@ namespace r6Launcher.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"Y1S0 Vanilla
 Y1S1 Black Ice
-Y1S2 Dust LIne
+Y1S2 Dust Line
 Y1S3 Skull Rain
 Y1S4 Red Crow
 Y2S1 Velvet Shell
@@ -80,6 +80,30 @@ Y6S4 High Calibre")]
             }
             set {
                 this["Currently_Op"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Saved_Path {
+            get {
+                return ((string)(this["Saved_Path"]));
+            }
+            set {
+                this["Saved_Path"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedPathOps {
+            get {
+                return ((string)(this["SavedPathOps"]));
+            }
+            set {
+                this["SavedPathOps"] = value;
             }
         }
     }

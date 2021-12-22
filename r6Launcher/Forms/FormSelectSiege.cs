@@ -26,14 +26,25 @@ namespace r6Launcher.Forms
             settings.Save();
             comboBoxSelectSiege.Items.Clear();
         }
-
-        private void comboBoxSelectSiege_SelectedIndexChanged(object sender, EventArgs e)
+        private void Select_Clicked(object sender, EventArgs e)
         {
-            if (comboBoxSelectSiege.SelectedIndex != -1)
+            if (comboBoxSelectSiege.SelectedIndex != -1 && comboBoxSelectSiege.SelectedItem.ToString() != "")
             {
                 var settings = new Properties.Settings();
                 string selitem = comboBoxSelectSiege.SelectedItem.ToString();
                 settings.Currently_Op = selitem;
+                string[] splitted = settings.SavedPathOps.Split('|');
+                foreach (string file in splitted)
+                {
+                    string[] splittedfile = file.Split('*');
+                    string Path = splittedfile.First();
+                    string season = splittedfile.Last();
+                    if (season == selitem)
+                    {
+                        Log.WriteLog(Path + " " + season);
+                        settings.Saved_Path = Path;
+                    }
+                }
                 settings.Save();
                 Log.WriteLog(selitem + " is selected!");
             }
@@ -43,5 +54,7 @@ namespace r6Launcher.Forms
             Public.useVulkan = useVulkanCheckBox.Checked;
         }
         #endregion
+
+
     }
 }

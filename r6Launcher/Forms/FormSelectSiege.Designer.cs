@@ -53,6 +53,7 @@
             this.buttonSelectSiege.TabIndex = 1;
             this.buttonSelectSiege.Text = "Select Operation";
             this.buttonSelectSiege.UseVisualStyleBackColor = true;
+            this.buttonSelectSiege.Click += new System.EventHandler(this.Select_Clicked);
             // 
             // label1
             // 
@@ -63,7 +64,7 @@
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 16);
+            this.label1.Size = new System.Drawing.Size(166, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "The name of the Operation";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +81,6 @@
             this.comboBoxSelectSiege.Name = "comboBoxSelectSiege";
             this.comboBoxSelectSiege.Size = new System.Drawing.Size(275, 24);
             this.comboBoxSelectSiege.TabIndex = 7;
-            this.comboBoxSelectSiege.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectSiege_SelectedIndexChanged);
             // 
             // useVulkanCheckBox
             // 
@@ -88,7 +88,7 @@
             this.useVulkanCheckBox.ForeColor = System.Drawing.Color.White;
             this.useVulkanCheckBox.Location = new System.Drawing.Point(367, 338);
             this.useVulkanCheckBox.Name = "useVulkanCheckBox";
-            this.useVulkanCheckBox.Size = new System.Drawing.Size(159, 20);
+            this.useVulkanCheckBox.Size = new System.Drawing.Size(160, 20);
             this.useVulkanCheckBox.TabIndex = 8;
             this.useVulkanCheckBox.Text = "Use Vulkan If possible";
             this.useVulkanCheckBox.UseVisualStyleBackColor = true;

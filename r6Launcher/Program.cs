@@ -13,7 +13,9 @@ namespace r6Launcher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Log.WriteLog("R6Launcher Started");
             Application.Run(new Main());
+            Log.WriteLog("R6Launcher Exited");
         }
     }
 }
