@@ -1,4 +1,4 @@
-﻿namespace r6Launcher
+namespace r6Launcher
 {
     partial class Main
     {

@@ -42,13 +42,14 @@
             this.buttonAddr6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddr6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddr6.ForeColor = System.Drawing.Color.White;
-            this.buttonAddr6.Location = new System.Drawing.Point(161, 195);
+            this.buttonAddr6.Location = new System.Drawing.Point(169, 293);
             this.buttonAddr6.MinimumSize = new System.Drawing.Size(154, 64);
             this.buttonAddr6.Name = "buttonAddr6";
             this.buttonAddr6.Size = new System.Drawing.Size(154, 64);
             this.buttonAddr6.TabIndex = 0;
             this.buttonAddr6.Text = "Add Siege";
             this.buttonAddr6.UseVisualStyleBackColor = true;
+            this.buttonAddr6.Click += new System.EventHandler(this.buttonAddr6_Click);
             // 
             // label1
             // 
@@ -57,7 +58,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 16);
+            this.label1.Size = new System.Drawing.Size(165, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "The name of the Operation";
             // 
